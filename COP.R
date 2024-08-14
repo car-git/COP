@@ -1,3 +1,4 @@
+# Change as necessary:
 #file_path <- "/Users/carlosmh1/Desktop/Tobacco/Barley.txt"
 
 # Read the file, skipping lines that start with "#" and using tab as the delimiter
@@ -112,6 +113,7 @@ print(sorted_cop)
 directory <- dirname(file_path)
 
 # Construct the full path for saving the sorted_cop matrix
+# Change as necessary:
 output_file <- file.path(directory, "sorted_cop_matrix.csv")
 
 # Save the sorted_cop matrix to a CSV file in the extracted directory
