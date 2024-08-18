@@ -1,6 +1,5 @@
 # Modify as needed:
-file_path <- "/Users/carlosmh1/Desktop/Barley.txt"
-file_path <- "/Users/carlosmh1/Desktop/kemp.txt"
+file_path <- "/Users/carlosmh1/Desktop/barley.txt"
 
 # Read the file, skipping lines that start with "#" and using tab as the delimiter
 Data <- read.table(file_path, header = FALSE, sep = "\t", comment.char = "#")
