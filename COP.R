@@ -1,5 +1,6 @@
 # Modify as needed:
-file_path <- "/Users/carlosmh1/Desktop/barley.txt"
+file_path <- "/Users/carlosmh1/Desktop/Barley.txt"
+file_path <- "/Users/carlosmh1/Desktop/kemp.txt"
 
 # Read the file, skipping lines that start with "#" and using tab as the delimiter
 Data <- read.table(file_path, header = FALSE, sep = "\t", comment.char = "#")
@@ -84,30 +85,14 @@ cop <- (1/2) * t(F) %*% F
 # If terminal ancestors are homozygous use this:
 # cop <- 2 * cop
 
-# Sum the rows and columns of the cop matrix
-row_sums <- rowSums(cop)
-col_sums <- colSums(cop)
-
-# Combine the row and column sums
-combined_sums <- row_sums + col_sums
-
-# Sort the indices based on the combined sums in descending order
-sorted_indices <- order(combined_sums, decreasing = TRUE)
-
-# Reorder the cop matrix
-sorted_cop <- cop[sorted_indices, sorted_indices]
-
-# Display the sorted cop matrix
-print(sorted_cop)
-
 # Extract the directory from the file path
 directory <- dirname(file_path)
 
 # Construct the full path for saving the sorted_cop matrix (modify as needed):
-output_file <- file.path(directory, "sorted_cop_matrix.csv")
+output_file <- file.path(directory, "cop_matrix.csv")
 
 # Save the sorted_cop matrix to a CSV file in the extracted directory
-write.csv(sorted_cop, output_file, row.names = TRUE)
+write.csv(cop, output_file, row.names = TRUE)
 
 # Print the path to the saved file
 print(paste("File saved at:", output_file))
