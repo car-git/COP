@@ -76,12 +76,6 @@ for (strain in strains_not_in_string) {
 # Display the updated matrix E
 print(E)
 
-# Further update E based on row sums of P
-for (j in 1:nrow(P)) {
-  if (sum(P[j, ]) == 0) {
-    E[j, j] <- 1
-  }
-}
 
 # Calculate matrices F and cop
 F   <- E %*% Q
